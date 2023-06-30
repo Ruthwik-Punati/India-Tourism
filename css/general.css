@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  font-size: 1.8rem;
+  line-height: 1.5;
+  color: #555;
+  letter-spacing: 0.75px;
+  background-color: #eee;
+  overflow-x: hidden;
+}
+
+section {
+  padding-top: 6.4rem;
+  padding-bottom: 6.4rem;
+}
+.container {
+  max-width: 130rem;
+  padding-left: 3.2rem;
+  padding-right: 3.2rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sub-heading {
+  font-size: 1.6rem;
+  letter-spacing: 1.1px;
+  margin-bottom: 1.2rem;
+}
+
+.heading-primary {
+  font-size: 5.2rem;
+  font-weight: 200;
+  letter-spacing: 3px;
+  line-height: 1.25;
+  margin-bottom: 3.2rem;
+}
+
+.heading-secondary {
+  font-size: 4.4rem;
+  font-weight: 100;
+  margin-bottom: 2.4rem;
+  line-height: 1.2;
+  letter-spacing: 1px;
+}
+.heading-ternary {
+  font-size: 2.4rem;
+
+  line-height: 1.5;
+  font-weight: 100;
+  margin-bottom: 1.2rem;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+.heading-four {
+  font-size: 2rem;
+
+  line-height: 1.1;
+  font-weight: 100;
+  margin-bottom: 1.2rem;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+
+.heading-five {
+  font-weight: 600;
+  font-size: 1.6rem;
+  margin-bottom: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  line-height: 1;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid--2--cols {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3.2rem;
+}
+
+.grid--3--cols {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3.2rem;
+}
+
+.grid--5--cols {
+  grid-template-columns: repeat(5, 1fr);
+  gap: 3.2rem;
+}
+
+.brand-logo {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.brand-logo img {
+  width: 100%;
+  height: 100%;
+}
+
+.display-none {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
