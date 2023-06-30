@@ -31,9 +31,9 @@ navBtn.addEventListener("click", function (e) {
   //   navLinks.classList.add()
   // }
 
-  navCloseIcon.classList.toggle("display-none");
+  navCloseIcon.classList.toggle("display-full");
   navOpenIcon.classList.toggle("display-none");
-  navLinks.classList.toggle("display-none");
+  navLinks.classList.toggle("display-full");
 });
 
 // GALLERY ANIMATON

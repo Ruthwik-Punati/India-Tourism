@@ -111,6 +111,13 @@ section {
   height: 100%;
 }
 
+.display-full {
+  opacity: 1 !important;
+  pointer-events: all !important;
+
+  visibility: visible !important;
+}
+
 .display-none {
   opacity: 0;
   pointer-events: none;

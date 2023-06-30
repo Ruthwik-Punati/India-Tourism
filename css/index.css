@@ -20,7 +20,7 @@
 
 .nav-links {
   width: 40%;
-  background-color: #cccccc27;
+
   list-style-type: none;
   display: flex;
   justify-content: space-around;
@@ -46,8 +46,8 @@
 }
 
 .nav-btn {
+  display: none;
   position: absolute;
-
   top: 2rem;
   right: 2rem;
   background-color: inherit;
