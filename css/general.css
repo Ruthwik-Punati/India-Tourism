@@ -42,12 +42,12 @@ section {
 .heading-ternary,
 .heading-four,
 .heading-five {
-  font-weight: 600 !important;
+  font-weight: 500 !important;
 }
 
 .heading-primary {
   font-size: 5.2rem;
-  font-weight: 200;
+
   letter-spacing: 3px;
   line-height: 1.25;
   margin-bottom: 3.2rem;
@@ -55,7 +55,7 @@ section {
 
 .heading-secondary {
   font-size: 4.4rem;
-  font-weight: 100;
+
   margin-bottom: 2.4rem;
   line-height: 1.2;
   letter-spacing: 1px;
@@ -64,7 +64,7 @@ section {
   font-size: 2.4rem;
 
   line-height: 1.5;
-  font-weight: 100;
+
   margin-bottom: 1.2rem;
   text-transform: capitalize;
   letter-spacing: 1px;
@@ -80,7 +80,6 @@ section {
 }
 
 .heading-five {
-  font-weight: 600;
   font-size: 1.6rem;
   margin-bottom: 0.8rem;
   letter-spacing: 1px;
