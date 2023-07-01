@@ -40,9 +40,13 @@ section {
 .heading-primary,
 .heading-secondary,
 .heading-ternary,
-.heading-four,
-.heading-five {
+.heading-four {
   font-weight: 500 !important;
+  letter-spacing: 1px !important;
+}
+.heading-five {
+  font-weight: 700 !important;
+  letter-spacing: 1px !important;
 }
 
 .heading-primary {
