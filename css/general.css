@@ -37,6 +37,14 @@ section {
   margin-bottom: 1.2rem;
 }
 
+.heading-primary,
+.heading-secondary,
+.heading-ternary,
+.heading-four,
+.heading-five {
+  font-weight: 600 !important;
+}
+
 .heading-primary {
   font-size: 5.2rem;
   font-weight: 200;
