@@ -15,7 +15,7 @@
 .nav-logo {
   transform: scale(40%);
   opacity: 1 !important;
-  margin-left: 6.4rem;
+  margin-left: 2rem;
 }
 
 .nav-links {
@@ -27,7 +27,6 @@
   align-items: center;
   transition: 0.3s ease-in-out;
   margin-left: 0;
-  z-index: 1000;
 }
 
 .nav-links.display-none {
@@ -49,22 +48,23 @@
 .nav-btn {
   display: none;
   position: absolute;
-  top: 1.5rem;
+  top: 2rem;
   right: 2rem;
   background-color: inherit;
   border: none;
+  z-index: 50;
 }
 
 .nav-open-icon,
 .nav-close-icon {
-  width: 5rem;
-  height: 5rem;
+  width: 4rem;
+  height: 4rem;
   color: #ccc;
   transition: 0.3s;
+  z-index: 100;
 }
 
 .nav-close-icon {
-  z-index: 2000;
   position: absolute;
 }
 
@@ -81,7 +81,7 @@
   height: 72rem;
   background-image: linear-gradient(
       to right,
-      rgba(0, 0, 0, 0.7) 50%,
+      rgba(0, 0, 0, 0.7) 60%,
       rgba(0, 0, 0, 0) 80%
     ),
     url(../img/pexels-darshak-pandya-574313-header-background.jpg);
@@ -101,9 +101,12 @@
   color: #eee;
   text-align: center;
   text-shadow: 1px 1px 0 10px black;
+  z-index: 0;
 }
 
 .main-header-text {
+  font-size: 2rem;
+
   line-height: 1.5;
 }
 
