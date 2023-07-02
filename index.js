@@ -28,10 +28,7 @@ const sectionSlideUpOptions = {
 };
 
 function slideUp(entries, arg) {
-  console.log(arg);
-  console.log(entries);
   entries.forEach((entry) => {
-    console.log(entry);
     if (entry.isIntersecting) {
       entry.target.style.transform = "none";
       entry.target.classList.remove("display-none");
@@ -65,31 +62,48 @@ const sliderButtonRight = document.querySelector(".slider-btn-right");
 const sliderButtonLeft = document.querySelector(".slider-btn-left");
 
 let slide = 0;
-console.log(slide);
+
+// click function
+
+let classes = [];
+
+// sliderButtonContainer.classList.add("btn-translate-right");
+
+function buttonBorderSlideRight() {
+  sliderButtonContainer.classList.add("btn-translate-right");
+  sliderButtonContainer.classList.remove("btn-translate-left");
+  console.log("moved right");
+}
+
+function buttonBorderSlideLeft() {
+  sliderButtonContainer.classList.remove("btn-translate-right");
+  sliderButtonContainer.classList.add("btn-translate-left");
+  console.log("moved left");
+}
+
 function sideSlide(e) {
-  console.log(e.target);
   if (e.target === sliderButtonRight) {
     if (slide < 50) {
       slide += 25;
-    }
 
-    console.log(slide);
-    familyTimeCardContainer.style.transform = `translateX(${-slide}%)`;
+      familyTimeCardContainer.style.transform = `translateX(${-slide}%)`;
+      buttonBorderSlideRight();
+    }
   }
 
   if (e.target === sliderButtonLeft) {
     if (slide > 0) {
       slide -= 25;
-    } else {
-      slide = 0;
-    }
 
-    console.log(slide);
-    familyTimeCardContainer.style.transform = `translateX(${-slide}%)`;
+      familyTimeCardContainer.style.transform = `translateX(${-slide}%)`;
+
+      buttonBorderSlideLeft();
+    }
   }
 
   if (slide === 0) {
     sliderButtonLeft.classList.add("not-clickable");
+    buttonBorderSlideRight();
   }
 
   if (slide > 0) {
@@ -97,11 +111,42 @@ function sideSlide(e) {
   }
   if (slide === 50) {
     sliderButtonRight.classList.add("not-clickable");
+    buttonBorderSlideLeft();
   } else {
     sliderButtonRight.classList.remove("not-clickable");
   }
+
+  classes = sliderButtonContainer.getAttribute("class");
+  console.log(classes);
 }
 
 sliderButtonContainer.addEventListener("click", sideSlide);
 
-console.log(document.querySelector(".gallery").querySelectorAll("li"));
+sliderButtonContainer.addEventListener("mouseover", function (e) {
+  if (
+    e.target === sliderButtonRight &&
+    !e.target.classList.contains("not-clickable")
+  ) {
+    classes = sliderButtonContainer.getAttribute("class");
+    console.log(classes);
+    buttonBorderSlideRight();
+  }
+
+  if (
+    e.target === sliderButtonLeft &&
+    !e.target.classList.contains("not-clickable")
+  ) {
+    classes = sliderButtonContainer.getAttribute("class");
+    console.log(classes);
+    buttonBorderSlideLeft();
+  }
+});
+
+sliderButtonContainer.addEventListener("mouseout", function (e) {
+  console.log(sliderButtonContainer.getAttribute("class"));
+  if (e.target === sliderButtonLeft || e.target === sliderButtonRight) {
+    console.log(classes);
+    console.log(1);
+    sliderButtonContainer.className = classes;
+  }
+});
