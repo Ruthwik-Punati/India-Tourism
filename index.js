@@ -103,3 +103,5 @@ function sideSlide(e) {
 }
 
 sliderButtonContainer.addEventListener("click", sideSlide);
+
+console.log(document.querySelector(".gallery").querySelectorAll("li"));

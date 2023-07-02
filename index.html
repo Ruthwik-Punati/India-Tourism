@@ -535,54 +535,6 @@
         </li>
 
 
-        <!-- SECOND SET FOR ANIMATION -->
-
-        <li>
-          <img
-            src="./img/gallery/shubham-bochiwal-BYYu5nvQoUM-unsplash.jpg"
-          />
-          <ion-icon class="insta-logo" name="logo-instagram"></ion-icon>
-        </li>
-        <li>
-          <img
-            src="./img/gallery/IMG20230212080951~2.jpg"
-          />
-          <ion-icon class="insta-logo" name="logo-instagram"></ion-icon>
-        </li>
-        <li>
-          <img
-            src="./img/gallery/onkarphoto-JmrGwUrqvoc-unsplash.jpg"
-          />
-          <ion-icon class="insta-logo" name="logo-instagram"></ion-icon>
-        </li>
-        <li>
-          <img
-            src="./img/gallery/martin-jernberg-XI7lwAWzhZQ-unsplash.jpg"
-          />
-          <ion-icon class="insta-logo" name="logo-instagram"></ion-icon>
-        </li>
-
-        <li>
-          <img
-            src="./img/gallery/leo-rivas-R_BLOGXpsOg-unsplash.jpg"
-          />
-          <ion-icon class="insta-logo" name="logo-instagram"></ion-icon>
-        </li>
-
-        <li>
-          <img
-            src="./img/gallery/pexels-sohel-patel-68912.jpg"
-          />
-          <ion-icon class="insta-logo" name="logo-instagram"></ion-icon>
-        </li>
-
-        <li>
-          <img
-            src="./img/gallery/pexels-vincent-ma-janssen-2302809.jpg"
-          />
-          <ion-icon class="insta-logo" name="logo-instagram"></ion-icon>
-        </li>
-
         
       </ul>
 
@@ -635,58 +587,6 @@
           />
           <ion-icon class="insta-logo" name="logo-instagram"></ion-icon>
         </li>
-
-
-<!-- second set for animation slider2 -->
-
-
-<li>
-  <img
-    src="./img/gallery/pxfuel (3).jpg"
-  />
-  <ion-icon class="insta-logo" name="logo-instagram"></ion-icon>
-</li>
-<li>
-  <img
-    src="./img/gallery/pexels-vivek-3715768.jpg"
-  />
-  <ion-icon class="insta-logo" name="logo-instagram"></ion-icon>
-</li>
-<li>
-  <img
-    src="./img/gallery/rishi-mohan-LDyG7_zlhOU-unsplash.jpg"
-  />
-  <ion-icon class="insta-logo" name="logo-instagram"></ion-icon>
-</li>
-<li>
-  <img
-    src="./img/gallery/sachin-singh-xBj61v5PiHU-unsplash.jpg"
-  />
-  <ion-icon class="insta-logo" name="logo-instagram"></ion-icon>
-</li>
-
-<li>
-  <img
-    src="./img/gallery/anmol-kerketta--QrOaXkjqmA-unsplash.jpg"
-  />
-  <ion-icon class="insta-logo" name="logo-instagram"></ion-icon>
-</li>
-
-<li>
-  <img
-    src="./img/gallery/ankit-dandhare-i-SZ80CcBSc-unsplash.jpg"
-  />
-  <ion-icon class="insta-logo" name="logo-instagram"></ion-icon>
-</li>
-
-<li>
-  <img
-    src="./img/gallery/pexels-alok-kumar-14617402.jpg"
-  />
-  <ion-icon class="insta-logo" name="logo-instagram"></ion-icon>
-</li>
-
-
       </ul>
     </section>
 
@@ -780,11 +680,42 @@
 
 
 <p class="copy-right">&copy; 2024 India Tourism | All rights reserved</p>
+ 
+
+    </footer>
+
+
+
 
 
     
+<script>
 
-    </footer>
+// adding a duplicate set of li elements for gallery animation
+
+// for slider-1
+const slider1 = document.querySelector(".slider-1");
+
+const slider1LiCopyNodeList = slider1.querySelectorAll("li");
+
+slider1LiCopyNodeList.forEach((liEl) => {
+  let copy1 = liEl.cloneNode(true);
+
+  slider1.appendChild(copy1);
+});
+
+// for slider2
+const slider2 = document.querySelector(".slider-2");
+
+const slider2LiCopyNodeList = slider2.querySelectorAll("li");
+
+slider2LiCopyNodeList.forEach((liEl) => {
+  let copy2 = liEl.cloneNode(true);
+
+  slider2.appendChild(copy2);
+});
+
+</script>
 
     <script defer type="text/javascript" src="index.js"></script>
 

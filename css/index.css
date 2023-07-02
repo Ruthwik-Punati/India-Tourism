@@ -666,8 +666,8 @@
   animation: 20s slider2 linear infinite;
 }
 
-.gallery li:hover {
-  transform: none;
+.gallery:hover li {
+  animation-play-state: paused;
 }
 
 .gallery li img {
