@@ -1,30 +1,12 @@
-// document.querySelector(".worker").addEventListener("click", function () {
-//   console.log(1);
-//   for (i = 0; i < 1000000000; i++) {
-//     let j = i;
-//   }
-//   alert("worker done!");
-// });
+const sections = document.querySelectorAll("section");
 
-// document.querySelector(".normal").addEventListener("click", function () {
-//   alert("normal clicked");
-// });
-const sectionGallery = document.querySelector(".section-gallery");
-const sliderBtnLeft = document.querySelector(".slider-btn-left");
-const sliderBtnRight = document.querySelector(".slider-btn-right");
-const sliderBtnContainer = document.querySelector(".slider-btn-container");
-const slider = document.querySelector(".family-time-card-container");
-const galleryListItem = document
-  .querySelector(".gallery")
-  .querySelectorAll("li");
-
+//  NAV BTN RELATED
 const navBtn = document.querySelector(".nav-btn");
 const navCloseIcon = navBtn.querySelector(".nav-close-icon");
 const navOpenIcon = navBtn.querySelector(".nav-open-icon");
 const navLinks = document.querySelector(".nav-links");
 
 // NAV BUTTON FUNCTIONALITY
-
 navBtn.addEventListener("click", function (e) {
   console.log(e.target);
   // if (!navOpenIcon.classList.contains("display-none")){
@@ -36,50 +18,34 @@ navBtn.addEventListener("click", function (e) {
   navLinks.classList.toggle("display-full");
 });
 
-// GALLERY ANIMATON
+// LAZY LOADING
 
-// let move = 50;
+const sectionSlideUpOptions = {
+  root: null,
+  threshold: 0,
+  rootMargin: "-30px",
+};
 
-// console.log(window.visualViewport.width);
+function slideUp(entries, arg) {
+  console.log(arg);
+  console.log(entries);
+  entries.forEach((entry) => {
+    console.log(entry);
+    if (entry.isIntersecting) {
+      entry.target.style.transform = "none";
+      entry.target.classList.remove("display-none");
+    }
+  });
+}
 
-// setInterval(function () {
-//   translateGalleryItems();
-// }, 10);
+const sectionObserver = new IntersectionObserver(
+  slideUp,
+  sectionSlideUpOptions
+);
 
-// function translateGalleryItems() {
-//   galleryListItem.forEach(
-//     (list) => (list.style.transform = `translate(${move}px)`)
-//   );
-//   if (move === 500) {
-//     move = 0;
-//   } else {
-//     move = move + 1;
-//   }
-// }
-
-// const observer = new IntersectionObserver(
-//   function (entries) {
-//     console.log(entries);
-//     entries.forEach((e) => {
-//       if (!e.isIntersecting) {
-//         console.log(e.target);
-//         e.target.style.transform = "translate(-400%)";
-//       }
-//     });
-//   },
-//   { root: sectionGallery, rootMargin: "50px", threshold: [0] }
-// );
-
-// galleryListItem.forEach((list) => observer.observe(list));
-
-// document
-//   .querySelector(".slider-btn-container")
-//   .addEventListener("click", function (e) {
-//     console.log(e.target);
-//     if (e.target === sliderBtnLeft) {
-//       slider.style.transform = "translate(-20%)";
-//     }
-//     if (e.target === sliderBtnRight) {
-//       slider.style.marginLeft = "20%";
-//     }
-//   });
+sections.forEach((section) => {
+  section.style.transform = "translateY(20rem)";
+  section.classList.add("display-none");
+  section.style.transition = "1s";
+  sectionObserver.observe(section);
+});
