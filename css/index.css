@@ -545,15 +545,17 @@
 
 .section-family-time .see-all:link,
 .section-family-time .see-all:visited {
-  justify-self: flex-end;
+  justify-self: center;
   align-self: flex-end;
   margin: initial;
+  /* margin-right: 20%; */
 }
 
 .family-time-card-container {
   display: flex;
   gap: 3.2rem;
-  width: 150%;
+  width: 190%;
+  transition: 0.5s;
 }
 
 .family-time-card {
@@ -646,7 +648,7 @@
 .gallery li {
   position: relative;
   flex: 1;
-  height: 35vw;
+  height: 25vw;
   /* transition: 0.1s ease; */
 }
 

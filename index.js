@@ -1,4 +1,5 @@
 const sections = document.querySelectorAll("section");
+const footer = document.querySelector("footer");
 
 //  NAV BTN RELATED
 const navBtn = document.querySelector(".nav-btn");
@@ -47,5 +48,58 @@ sections.forEach((section) => {
   section.style.transform = "translateY(20rem)";
   section.classList.add("display-none");
   section.style.transition = "1s";
+
+  footer.classList.add("display-none");
+  footer.style.transition = "1s";
   sectionObserver.observe(section);
+  sectionObserver.observe(footer);
 });
+
+// slider button functionality
+
+const familyTimeCardContainer = document.querySelector(
+  ".family-time-card-container"
+);
+const sliderButtonContainer = document.querySelector(".slider-btn-container");
+const sliderButtonRight = document.querySelector(".slider-btn-right");
+const sliderButtonLeft = document.querySelector(".slider-btn-left");
+
+let slide = 0;
+console.log(slide);
+function sideSlide(e) {
+  console.log(e.target);
+  if (e.target === sliderButtonRight) {
+    if (slide < 50) {
+      slide += 25;
+    }
+
+    console.log(slide);
+    familyTimeCardContainer.style.transform = `translateX(${-slide}%)`;
+  }
+
+  if (e.target === sliderButtonLeft) {
+    if (slide > 0) {
+      slide -= 25;
+    } else {
+      slide = 0;
+    }
+
+    console.log(slide);
+    familyTimeCardContainer.style.transform = `translateX(${-slide}%)`;
+  }
+
+  if (slide === 0) {
+    sliderButtonLeft.classList.add("not-clickable");
+  }
+
+  if (slide > 0) {
+    sliderButtonLeft.classList.remove("not-clickable");
+  }
+  if (slide === 50) {
+    sliderButtonRight.classList.add("not-clickable");
+  } else {
+    sliderButtonRight.classList.remove("not-clickable");
+  }
+}
+
+sliderButtonContainer.addEventListener("click", sideSlide);

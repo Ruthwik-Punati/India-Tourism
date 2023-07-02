@@ -132,7 +132,6 @@ section {
   visibility: hidden !important;
 }
 
-a:hover,
-a:active {
-  color: gold !important;
+.not-clickable {
+  opacity: 0.3;
 }
