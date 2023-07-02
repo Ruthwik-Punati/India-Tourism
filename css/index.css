@@ -596,29 +596,10 @@
 .slider-btn-container {
   position: relative;
 }
-/* 
-.btn-border {
-  padding: 6.4rem 9.6rem;
 
-  position: absolute;
-  transform: translate(-25%, -10%) rotate(-25deg);
-  border-radius: 50%;
-  z-index: 1;
-  border: 1px solid #777;
-}
-
-.btn-border:hover {
-  transform: translate(25%, -10%) rotate(-25deg);
-  z-index: 2;
-} */
-
-/* *********************** */
-/* SECTION-GALLERY */
-/* ********************** */
-
-/* .section-gallery {
- 
-} */
+/* ************************ */
+/* ****SECTION-GALLERY******* */
+/* ************************ */
 
 .gallery-sub-heading {
   font-size: 2rem;
@@ -641,15 +622,48 @@
 .gallery {
   list-style-type: none;
   display: flex;
-  width: 175vw;
-  /* margin-left: -25vw; */
+}
+
+@keyframes slider1 {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-700%);
+  }
 }
 
 .gallery li {
   position: relative;
-  flex: 1;
+  flex: 1 0 25vw;
   height: 25vw;
+
   /* transition: 0.1s ease; */
+}
+
+@keyframes slider2 {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(700%);
+  }
+}
+
+.slider-1 {
+  margin-right: -175vw;
+}
+
+.slider-1 li {
+  animation: 20s slider1 linear infinite;
+}
+
+.slider-2 {
+  margin-left: -175vw;
+}
+
+.slider-2 li {
+  animation: 20s slider2 linear infinite;
 }
 
 .gallery li:hover {

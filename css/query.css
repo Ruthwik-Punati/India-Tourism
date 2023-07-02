@@ -307,11 +307,16 @@ and we use em because sometimes rem may face problems in media queries.
     flex: 1 !important;
   }
 
-  .gallery {
-    width: calc(7 * 40vw);
+  .slider-1 {
+    margin-right: calc(-40vw * 7);
+  }
+
+  .slider-2 {
+    margin-left: calc(-40vw * 7);
   }
 
   .gallery li {
+    flex: 1 0 40vw;
     height: 40vw;
   }
 
@@ -427,6 +432,10 @@ and we use em because sometimes rem may face problems in media queries.
   .section-family-time header {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  .insta-logo {
+    font-size: 3.2rem;
   }
 }
 
