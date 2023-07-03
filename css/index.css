@@ -446,7 +446,7 @@
   grid-row: 1;
 }
 
-.input-box:nth-child(3) {
+.input-box:nth-child(4) {
   grid-column: 1/-1;
 }
 
