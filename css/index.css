@@ -427,7 +427,7 @@
   border: none;
   border-bottom: 1px solid #ccc;
   font-size: inherit;
-  color: inherit;
+  color: #eee;
   width: 100%;
 }
 
@@ -452,8 +452,8 @@
 .form-submit {
   background-color: inherit;
   text-transform: capitalize;
-  font-size: inherit;
-  color: inherit;
+  font-size: 2rem;
+  color: #eee;
 
   border: none;
   justify-self: end;
@@ -461,6 +461,7 @@
 
 .form-submit:hover {
   border-bottom: 1px solid #ccc;
+  color: gold;
 }
 
 /* ******************* */
@@ -747,6 +748,11 @@
   border-radius: 5px;
   border: none;
   margin-bottom: 1.8rem;
+}
+
+.section-footer a:link,
+.section-footer button {
+  font-style: normal;
 }
 
 .download-icon {
