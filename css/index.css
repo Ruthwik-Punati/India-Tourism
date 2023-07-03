@@ -92,6 +92,11 @@
   position: relative;
 }
 
+.main-header a:link,
+button {
+  font-style: normal;
+}
+
 .main-header-text-box {
   position: absolute;
   top: 50%;
@@ -453,15 +458,15 @@
   background-color: inherit;
   text-transform: capitalize;
   font-size: 2rem;
-  color: #eee;
+  color: #ddd;
 
   border: none;
   justify-self: end;
 }
 
-.form-submit:hover {
+.form-submit:hover,
+.form-submit:active {
   border-bottom: 1px solid #ccc;
-  color: gold;
 }
 
 /* ******************* */
