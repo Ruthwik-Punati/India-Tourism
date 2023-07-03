@@ -441,11 +441,6 @@
   outline: none;
 }
 
-.input-box:nth-child(3) {
-  grid-column: 2/-1;
-  grid-row: 1;
-}
-
 .input-box:nth-child(4) {
   grid-column: 1/-1;
 }
