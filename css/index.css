@@ -92,6 +92,10 @@
   position: relative;
 }
 
+.main-header .heading-primary {
+  color: #eee;
+}
+
 .main-header a:link,
 button {
   font-style: normal;
@@ -141,7 +145,7 @@ button {
 .main-header-text {
   line-height: 1.5;
   font-size: 2rem;
-  color: #888;
+  color: #666;
 }
 
 .theme-links-container {
