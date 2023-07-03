@@ -442,11 +442,13 @@
 }
 
 .input-box:nth-child(3) {
-  grid-column: 1/-1;
+  grid-column: 2/-1;
+  grid-row: 1;
 }
 
 #email {
   width: 100%;
+  grid-column: 1/-1;
 }
 
 .form-submit {
