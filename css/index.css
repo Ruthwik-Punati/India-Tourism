@@ -35,14 +35,15 @@
 
 .nav-link:link,
 .nav-link:visited {
+  transition: 0.1s;
   text-decoration: none;
   color: #fff;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
 }
 
 .nav-link:hover,
 .nav-link:active {
-  color: orange;
+  color: gold;
 }
 
 .nav-btn {
@@ -60,7 +61,7 @@
   width: 4rem;
   height: 4rem;
   color: #ccc;
-  transition: 0.3s;
+  transition: 0.4s;
 }
 
 .nav-close-icon {
@@ -112,7 +113,7 @@
 }
 
 .india {
-  color: rgb(255, 232, 100);
+  color: gold;
   font-size: 3rem;
 }
 
@@ -307,13 +308,6 @@
 /* ******************** */
 /* SECTION-LOCATIONS */
 /* ********************** */
-
-/* .section-locations .heading-secondary {
-} */
-
-/* .section-locations-header {
-
-} */
 
 .section-locations {
   padding-left: 3.2rem;

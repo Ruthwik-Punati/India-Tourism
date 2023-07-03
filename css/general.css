@@ -136,4 +136,11 @@ section {
 }
 
 .not-clickable {
-  opacity: 0.3;
+  opacity: 0.2;
+  cursor: not-allowed;
+}
+
+button,
+a:link {
+  cursor: pointer;
+}
