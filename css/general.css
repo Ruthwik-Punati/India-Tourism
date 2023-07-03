@@ -15,7 +15,7 @@ body {
   line-height: 1.5;
   color: #555;
   letter-spacing: 0.3px;
-  background-color: #eee;
+  background-color: #ddd;
   overflow-x: hidden;
 }
 
@@ -43,7 +43,6 @@ section {
 .heading-ternary,
 .heading-four,
 .heading-five {
-  color: #444;
   font-weight: 500;
   text-transform: capitalize;
 }
