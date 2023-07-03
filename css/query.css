@@ -349,9 +349,9 @@ and we use em because sometimes rem may face problems in media queries.
 /* ****************************** */
 
 @media (max-width: 34em) {
-  /* html {
+  html {
     font-size: 58%;
-  } */
+  }
 
   body {
     letter-spacing: 1.2px;
@@ -361,13 +361,14 @@ and we use em because sometimes rem may face problems in media queries.
     font-size: 3.6rem;
   }
 
-  .section-features {
-    padding-left: 1.2rem;
-    padding-right: 1.2rem;
-  }
   .heading-four {
     font-size: 2rem;
     line-height: 1.2;
+  }
+
+  .section-features {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
   }
 
   .section-locations,
@@ -383,8 +384,8 @@ and we use em because sometimes rem may face problems in media queries.
     margin-bottom: 3.2rem;
   }
 
-  .section-form {
-    margin: 6.4rem 0;
+  .card:nth-child(odd) .image-box-text {
+    text-align: center;
   }
 
   .theme-links-container {
@@ -415,6 +416,15 @@ and we use em because sometimes rem may face problems in media queries.
     font-size: 1.4rem;
   }
 
+  .section-form {
+    margin: 6.4rem 0;
+  }
+
+  .form input,
+  .form input::placeholder {
+    font-size: 1.8rem;
+  }
+
   .section-family .heading-primary {
     font-size: 3.6rem;
     margin-bottom: 2.4rem;
@@ -433,6 +443,10 @@ and we use em because sometimes rem may face problems in media queries.
     padding-left: 2rem;
     padding-right: 2rem;
   }
+
+  /* .family-time-text {
+    font-size: 1.8rem;
+  } */
 
   .insta-logo {
     font-size: 3.2rem;

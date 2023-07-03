@@ -13,8 +13,8 @@ body {
   font-family: "Rubik", sans-serif;
   font-size: 1.8rem;
   line-height: 1.5;
-  color: #555;
-  letter-spacing: 0.75px;
+  color: #666;
+  letter-spacing: 0.65px;
   background-color: #eee;
   overflow-x: hidden;
 }
@@ -143,4 +143,5 @@ section {
 button,
 a:link {
   cursor: pointer;
+  font-style: italic;
 }

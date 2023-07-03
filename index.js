@@ -52,7 +52,7 @@ sections.forEach((section) => {
   sectionObserver.observe(footer);
 });
 
-// slider button functionality
+// SLIDER BUTTON FUNCTIONALITY
 
 const familyTimeCardContainer = document.querySelector(
   ".family-time-card-container"
@@ -63,11 +63,7 @@ const sliderButtonLeft = document.querySelector(".slider-btn-left");
 
 let slide = 0;
 
-// click function
-
 let classes = [];
-
-// sliderButtonContainer.classList.add("btn-translate-right");
 
 function buttonBorderSlideRight() {
   sliderButtonContainer.classList.add("btn-translate-right");
