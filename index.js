@@ -48,7 +48,7 @@ navLinksObserver.observe(navLinks);
 const sectionSlideUpOptions = {
   root: null,
   threshold: 0,
-  rootMargin: "0px",
+  rootMargin: "-15px",
 };
 
 function slideUp(entries, arg) {
