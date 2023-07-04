@@ -55,13 +55,13 @@ document.addEventListener("scroll", function (e) {
   console.log(window.scrollY);
 
   const currentScrollPosition = window.scrollY;
-  if (
-    prevScrollPosition < currentScrollPosition ||
-    currentScrollPosition < 720
-  ) {
-    console.log("moving down");
+
+  if (currentScrollPosition > 720) {
+    nav.classList.add("fixed");
     nav.style.marginTop = "-5rem";
+  } else {
     nav.classList.remove("fixed");
+    nav.style.marginTop = "0";
   }
 
   if (
@@ -69,11 +69,6 @@ document.addEventListener("scroll", function (e) {
     currentScrollPosition > 720
   ) {
     console.log("moving up");
-    nav.style.marginTop = "0";
-    nav.classList.add("fixed");
-  }
-
-  if (currentScrollPosition < 720) {
     nav.style.marginTop = "0";
   }
 
