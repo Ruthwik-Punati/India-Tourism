@@ -72,6 +72,8 @@ document.addEventListener("scroll", function (e) {
     nav.style.marginTop = "0";
   }
 
+  navClose();
+
   prevScrollPosition = currentScrollPosition;
 });
 const navLinksObserver = new IntersectionObserver(
