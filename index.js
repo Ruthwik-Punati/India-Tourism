@@ -25,7 +25,13 @@ const navLinksCloseOptions = {
 function navLinksClose(entries) {
   entries.forEach((entry) => {
     if (!entry.isIntersecting) {
-      navLinksToggle();
+      function navLinksClose() {
+        navCloseIcon.classList.remove("display-full");
+        navOpenIcon.classList.remove("display-none");
+        navLinks.classList.remove("display-full");
+      }
+
+      navLinksClose();
     }
   });
 }
