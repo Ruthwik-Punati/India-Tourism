@@ -10,18 +10,17 @@
   align-items: center;
   height: 8rem;
   margin-top: 0;
-  transition: margin 0.3s;
 
   /* background-color: rgba(39, 39, 39, 0.604); */
 }
 
 .fixed {
   position: fixed;
-  top: 0;
+  top: -5rem;
   left: 0;
   background-color: #fff;
   height: 5rem;
-
+  transition: top 0.3s;
   z-index: 2000;
 }
 
@@ -63,6 +62,21 @@
 .nav-link:hover,
 .nav-link:active {
   color: gold;
+}
+
+.btn-join:link,
+.btn-join:visited {
+  color: #555;
+  padding: 0.8rem 1.2rem;
+  border-radius: 0.5rem;
+  background-color: gold;
+  font-weight: 500;
+}
+
+.btn-join:hover,
+.btn-join:active {
+  background-color: rgb(255, 187, 0);
+  color: #fff !important;
 }
 
 .nav-btn {
@@ -141,6 +155,13 @@ button {
 .india {
   color: gold;
   font-size: 3rem;
+}
+
+.btn-join-main {
+  display: inline-block;
+  margin-top: 2.4rem;
+
+  padding: 0.8rem 1.2rem !important;
 }
 
 /* ***************** */

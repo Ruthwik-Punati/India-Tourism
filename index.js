@@ -1,7 +1,37 @@
 const sections = document.querySelectorAll("section");
 const footer = document.querySelector("footer");
 
+// MAKING WINDOW SCROLL BEHAVIOR SMOOTH WHEN LINKS ARE CLICKED
+
+document.querySelectorAll("a:link").forEach((link) => {
+  link.addEventListener("click", function (e) {
+    e.preventDefault();
+    if (e.target.getAttribute("href") === "#") {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+
+    if (
+      e.target.getAttribute("href") !== "#" &&
+      e.target.getAttribute("href").startsWith("#")
+    ) {
+      const blockOption =
+        e.target.getAttribute("href") === "#join" ? "center" : "start";
+
+      document
+        .querySelector(`${e.target.getAttribute("href")}`)
+        .scrollIntoView({
+          behavior: "smooth",
+          block: blockOption,
+        });
+    }
+  });
+});
 //  NAV BTN RELATED
+const body = document.querySelector("body");
+
 const nav = document.querySelector("nav");
 const navBtn = document.querySelector(".nav-btn");
 const navCloseIcon = navBtn.querySelector(".nav-close-icon");
@@ -10,44 +40,33 @@ const navLinks = document.querySelector(".nav-links");
 const navLinkAll = document.querySelectorAll(".nav-link");
 
 // NAV BUTTON FUNCTIONALITY
+
 function navLinksToggle(e) {
   e.preventDefault();
   navCloseIcon.classList.toggle("display-full");
   navOpenIcon.classList.toggle("display-none");
   navLinks.classList.toggle("display-full");
+
+  if (navOpenIcon.classList.contains("display-none")) {
+    document.querySelector("html").style.overflowY = "hidden";
+  } else {
+    document.querySelector("html").style.overflowY = "visible";
+  }
 }
 
 function navClose() {
   navCloseIcon.classList.remove("display-full");
   navOpenIcon.classList.remove("display-none");
   navLinks.classList.remove("display-full");
+  document.querySelector("html").style.overflowY = "visible";
 }
 
 navBtn.addEventListener("click", navLinksToggle);
 navLinkAll.forEach((navLink) => {
-  navLink.addEventListener("click", function (e) {
-    e.preventDefault();
+  navLink.addEventListener("click", function () {
     navClose();
   });
 });
-
-const navLinksCloseOptions = {
-  root: null,
-  rootMargin: "0px",
-  threshold: 0,
-};
-
-function navLinksClose(entries) {
-  entries.forEach((entry) => {
-    if (!entry.isIntersecting) {
-      navClose();
-    }
-  });
-}
-
-// document.querySelector("body").onscroll = (e) => {
-//   console.log(e);
-// };
 
 let prevScrollPosition = 1000;
 
@@ -58,10 +77,9 @@ document.addEventListener("scroll", function (e) {
 
   if (currentScrollPosition > 720) {
     nav.classList.add("fixed");
-    nav.style.marginTop = "-5rem";
   } else {
     nav.classList.remove("fixed");
-    nav.style.marginTop = "0";
+    nav.style.top = "0rem";
   }
 
   if (
@@ -69,19 +87,37 @@ document.addEventListener("scroll", function (e) {
     currentScrollPosition > 720
   ) {
     console.log("moving up");
-    nav.style.marginTop = "0";
+    nav.style.top = "0rem";
   }
 
-  navClose();
+  if (prevScrollPosition < currentScrollPosition) {
+    nav.style.top = "-5rem";
+  }
 
   prevScrollPosition = currentScrollPosition;
 });
-const navLinksObserver = new IntersectionObserver(
-  navLinksClose,
-  navLinksCloseOptions
-);
 
-navLinksObserver.observe(navLinks);
+// NO NEED OF OBSERVER FOR NAVLINKS CAUSE HTML SCROLL IS BEING MADE HIDDEN
+
+// const navLinksCloseOptions = {
+//   root: null,
+//   rootMargin: "0px",
+//   threshold: 0,
+// };
+
+// function navLinksClose(entries) {
+//   entries.forEach((entry) => {
+//     if (!entry.isIntersecting) {
+//       navClose();
+//     }
+//   });
+// }
+// const navLinksObserver = new IntersectionObserver(
+//   navLinksClose,
+//   navLinksCloseOptions
+// );
+
+// navLinksObserver.observe(navLinks);
 
 // LAZY LOADING
 

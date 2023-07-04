@@ -145,3 +145,7 @@ a:link {
   cursor: pointer;
   font-style: italic;
 }
+
+.overFlow-y-hidden {
+  overflow-y: hidden;
+}
