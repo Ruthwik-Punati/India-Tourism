@@ -8,23 +8,41 @@ const navOpenIcon = navBtn.querySelector(".nav-open-icon");
 const navLinks = document.querySelector(".nav-links");
 
 // NAV BUTTON FUNCTIONALITY
-navBtn.addEventListener("click", function (e) {
-  console.log(e.target);
-  // if (!navOpenIcon.classList.contains("display-none")){
-  //   navLinks.classList.add()
-  // }
-
+function navLinksToggle(e) {
   navCloseIcon.classList.toggle("display-full");
   navOpenIcon.classList.toggle("display-none");
   navLinks.classList.toggle("display-full");
-});
+}
+
+navBtn.addEventListener("click", navLinksToggle);
+
+const navLinksCloseOptions = {
+  root: null,
+  rootMargin: "0px",
+  threshold: 0,
+};
+
+function navLinksClose(entries) {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) {
+      navLinksToggle();
+    }
+  });
+}
+
+const navLinksObserver = new IntersectionObserver(
+  navLinksClose,
+  navLinksCloseOptions
+);
+
+navLinksObserver.observe(navLinks);
 
 // LAZY LOADING
 
 const sectionSlideUpOptions = {
   root: null,
   threshold: 0,
-  rootMargin: "-30px",
+  rootMargin: "0px",
 };
 
 function slideUp(entries, arg) {
