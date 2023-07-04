@@ -6,15 +6,29 @@ const navBtn = document.querySelector(".nav-btn");
 const navCloseIcon = navBtn.querySelector(".nav-close-icon");
 const navOpenIcon = navBtn.querySelector(".nav-open-icon");
 const navLinks = document.querySelector(".nav-links");
+const navLinkAll = document.querySelectorAll(".nav-link");
 
 // NAV BUTTON FUNCTIONALITY
 function navLinksToggle(e) {
+  e.preventDefault();
   navCloseIcon.classList.toggle("display-full");
   navOpenIcon.classList.toggle("display-none");
   navLinks.classList.toggle("display-full");
 }
 
+function navClose() {
+  navCloseIcon.classList.remove("display-full");
+  navOpenIcon.classList.remove("display-none");
+  navLinks.classList.remove("display-full");
+}
+
 navBtn.addEventListener("click", navLinksToggle);
+navLinkAll.forEach((navLink) => {
+  navLink.addEventListener("click", function (e) {
+    e.preventDefault();
+    navClose();
+  });
+});
 
 const navLinksCloseOptions = {
   root: null,
@@ -25,13 +39,7 @@ const navLinksCloseOptions = {
 function navLinksClose(entries) {
   entries.forEach((entry) => {
     if (!entry.isIntersecting) {
-      function navLinksClose() {
-        navCloseIcon.classList.remove("display-full");
-        navOpenIcon.classList.remove("display-none");
-        navLinks.classList.remove("display-full");
-      }
-
-      navLinksClose();
+      navClose();
     }
   });
 }
