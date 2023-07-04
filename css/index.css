@@ -3,13 +3,32 @@
 /* ********************* */
 
 .nav {
+  position: relative;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 8rem;
+  margin-top: 0;
+  transition: margin 0.4s;
 
   /* background-color: rgba(39, 39, 39, 0.604); */
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  height: 5rem;
+
+  z-index: 2000;
+}
+
+.fixed .nav-link:link,
+.fixed .nav-link:visited,
+.fixed .nav-open-icon {
+  color: #444;
 }
 
 .nav-logo {
@@ -48,10 +67,8 @@
 
 .nav-btn {
   display: none;
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
-  background-color: inherit;
+  margin-right: 2rem;
+  background-color: rgba(0, 0, 0, 0);
   border: none;
   z-index: 3;
 }

@@ -140,15 +140,6 @@ section {
   cursor: not-allowed;
 }
 
-.fixed {
-  position: fixed;
-  top: 0;
-  left: 0;
-
-  z-index: 2000;
-  height: 7rem !important;
-}
-
 button,
 a:link {
   cursor: pointer;

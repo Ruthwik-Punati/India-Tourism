@@ -2,6 +2,7 @@ const sections = document.querySelectorAll("section");
 const footer = document.querySelector("footer");
 
 //  NAV BTN RELATED
+const nav = document.querySelector("nav");
 const navBtn = document.querySelector(".nav-btn");
 const navCloseIcon = navBtn.querySelector(".nav-close-icon");
 const navOpenIcon = navBtn.querySelector(".nav-open-icon");
@@ -44,6 +45,40 @@ function navLinksClose(entries) {
   });
 }
 
+// document.querySelector("body").onscroll = (e) => {
+//   console.log(e);
+// };
+
+let prevScrollPosition = 1000;
+
+document.addEventListener("scroll", function (e) {
+  console.log(window.scrollY);
+
+  const currentScrollPosition = window.scrollY;
+  if (
+    prevScrollPosition < currentScrollPosition ||
+    currentScrollPosition < 720
+  ) {
+    console.log("moving down");
+    nav.style.marginTop = "-5rem";
+    nav.classList.remove("fixed");
+  }
+
+  if (
+    prevScrollPosition > currentScrollPosition &&
+    currentScrollPosition > 720
+  ) {
+    console.log("moving up");
+    nav.style.marginTop = "0";
+    nav.classList.add("fixed");
+  }
+
+  if (currentScrollPosition < 720) {
+    nav.style.marginTop = "0";
+  }
+
+  prevScrollPosition = currentScrollPosition;
+});
 const navLinksObserver = new IntersectionObserver(
   navLinksClose,
   navLinksCloseOptions
