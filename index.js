@@ -68,10 +68,20 @@ navLinkAll.forEach((navLink) => {
   });
 });
 
+// FIXING HTML OVERFLOWY WHEN SCREEN RESIZED
+
+window.addEventListener("resize", function (e) {
+  console.log(e);
+  if (screen.availWidth > 770) {
+    navClose();
+  }
+});
+
+// MAKING DYNAMIC NAV WITH SCROLL
 let prevScrollPosition = 1000;
 
 document.addEventListener("scroll", function (e) {
-  console.log(window.scrollY);
+  console.log(window.innerWidth);
 
   const currentScrollPosition = window.scrollY;
 
