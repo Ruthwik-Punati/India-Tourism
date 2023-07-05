@@ -17,8 +17,8 @@
 .gallery {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
-  overflow-y: hidden;
-  /* overflow-x: scroll; */
+  overflow-y: hidden !important;
+  overflow-x: scroll !important;
 }
 
 /* ********************* */
