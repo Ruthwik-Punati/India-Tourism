@@ -5,17 +5,18 @@ const footer = document.querySelector("footer");
 
 document.querySelectorAll("a:link").forEach((link) => {
   link.addEventListener("click", function (e) {
-    e.preventDefault();
+    console.log(e.target, e.target.closest("a:link").getAttribute("href"));
 
-    if (
-      e.target === "#" ||
-      e.target.closest("a:link").getAttribute("href") === "#"
-    ) {
+    if (e.target.closest("a:link").getAttribute("href") === "#") {
+      e.preventDefault();
       window.scrollTo({
         top: 0,
         behavior: "smooth",
       });
-    } else if (e.target.getAttribute("href").startsWith("#")) {
+    } else if (
+      e.target.closest("a:link").getAttribute("href").startsWith("#")
+    ) {
+      e.preventDefault();
       const blockOption =
         e.target.getAttribute("href") === "#join" ? "center" : "start";
 

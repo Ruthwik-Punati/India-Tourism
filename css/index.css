@@ -1,3 +1,20 @@
+/* SIMILAR */
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.theme-links-container::-webkit-scrollbar,
+.features-container::-webkit-scrollbar,
+.family-time-card-container-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.theme-links-container,
+.features-container,
+.family-time-card-container-container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
 /* ********************* */
 /* NAV */
 /* ********************* */
@@ -10,8 +27,6 @@
   align-items: center;
   height: 8rem;
   margin-top: 0;
-
-  /* background-color: rgba(39, 39, 39, 0.604); */
 }
 
 .fixed {
@@ -705,6 +720,12 @@ button {
 .gallery {
   list-style-type: none;
   display: flex;
+  overflow: scroll;
+  scrollbar-width: 0;
+}
+
+.gallery::-webkit-scrollbar {
+  display: none;
 }
 
 @keyframes slider1 {
