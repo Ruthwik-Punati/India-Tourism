@@ -66,7 +66,6 @@
 
 .btn-join:link,
 .btn-join:visited {
-  color: #555;
   padding: 0.8rem 1.2rem;
   border-radius: 0.5rem;
   background-color: gold;
@@ -160,8 +159,9 @@ button {
 .btn-join-main {
   display: inline-block;
   margin-top: 2.4rem;
-
+  color: #333 !important;
   padding: 0.8rem 1.2rem !important;
+  font-size: 1.8rem !important;
 }
 
 /* ***************** */
