@@ -6,6 +6,8 @@
 .family-time-card-container-container::-webkit-scrollbar,
 .gallery::-webkit-scrollbar {
   display: none;
+  height: 0px;
+  width: 0px;
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
@@ -724,7 +726,6 @@ button {
 .gallery {
   list-style-type: none;
   display: flex;
-  overflow: scroll;
 
   scrollbar-width: 0;
 }
