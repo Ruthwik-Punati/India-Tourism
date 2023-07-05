@@ -6,17 +6,16 @@ const footer = document.querySelector("footer");
 document.querySelectorAll("a:link").forEach((link) => {
   link.addEventListener("click", function (e) {
     e.preventDefault();
-    if (e.target.getAttribute("href") === "#") {
+
+    if (
+      e.target === "#" ||
+      e.target.closest("a:link").getAttribute("href") === "#"
+    ) {
       window.scrollTo({
         top: 0,
         behavior: "smooth",
       });
-    }
-
-    if (
-      e.target.getAttribute("href") !== "#" &&
-      e.target.getAttribute("href").startsWith("#")
-    ) {
+    } else if (e.target.getAttribute("href").startsWith("#")) {
       const blockOption =
         e.target.getAttribute("href") === "#join" ? "center" : "start";
 
@@ -71,7 +70,6 @@ navLinkAll.forEach((navLink) => {
 // FIXING HTML OVERFLOWY WHEN SCREEN RESIZED
 
 window.addEventListener("resize", function (e) {
-  console.log(e);
   if (screen.availWidth > 770) {
     navClose();
   }
@@ -81,8 +79,6 @@ window.addEventListener("resize", function (e) {
 let prevScrollPosition = 1000;
 
 document.addEventListener("scroll", function (e) {
-  console.log(window.innerWidth);
-
   const currentScrollPosition = window.scrollY;
 
   if (currentScrollPosition > 720) {

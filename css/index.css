@@ -73,7 +73,7 @@
 
 .btn-join:hover,
 .btn-join:active {
-  background-color: rgb(255, 187, 0);
+  background-color: rgba(255, 187, 0, 0.95);
   color: #fff !important;
 }
 
@@ -161,6 +161,11 @@ button {
   color: #333 !important;
   padding: 0.8rem 1.2rem !important;
   font-size: 1.8rem !important;
+}
+
+.btn-join-main:hover,
+.btn-join-main:active {
+  color: #333 !important;
 }
 
 /* ***************** */
