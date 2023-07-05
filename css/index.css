@@ -11,6 +11,7 @@
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
+
 .theme-links-container,
 .features-container,
 .family-time-card-container-container,
@@ -177,7 +178,7 @@ button {
 }
 
 .btn-join-main {
-  display: inline-block;
+  display: none;
   margin-top: 2.4rem;
   color: #333 !important;
   padding: 0.8rem 1.2rem !important;
