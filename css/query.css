@@ -318,7 +318,7 @@ and we use em because sometimes rem may face problems in media queries.
   }
 
   .family-time-card {
-    background-color: #f5f1f1;
+    background-color: #f5f1f1d9;
     flex: 1 !important;
   }
 
