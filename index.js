@@ -253,3 +253,56 @@ sliderButtonContainer.addEventListener("mouseout", function (e) {
     sliderButtonContainer.className = classes;
   }
 });
+
+// PRACTICING NOTIFICATIONS
+
+const btnJoin = document
+  .querySelector(".btn-join")
+  .addEventListener("click", function (e) {
+    Notification.requestPermission().then(() => {
+      // alert(Notification.permission);
+      const notification = new Notification("Join now", {
+        body: Math.random(),
+        icon: "./img/logo-modified-192.png",
+        data: "hello world",
+        tag: "Welcome",
+      });
+      console.log(notification);
+      notification.addEventListener("click", (e) => {
+        const whyYouClosed = new Notification("Why are you closing!", {
+          body: "Are you not interested in travel?",
+          icon: "./img/logo-modified-192.png",
+        });
+        Notification.requestPermission().then(() => {});
+      });
+    });
+  });
+
+let comeBack;
+let interval;
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "hidden") {
+    const goneMoment = new Date();
+    interval = setInterval(() => {
+      comeBack = new Notification(
+        `You have been gone for ${Math.round(
+          (new Date() - goneMoment) / 1000
+        )}`,
+        {
+          body: "please!!!!!",
+          tag: "comeBack",
+        }
+      );
+    }, 1000);
+  } else {
+    if (interval) {
+      clearInterval(interval);
+    }
+    comeBack?.close();
+  }
+});
+
+document.cookie =
+  `name=ritwik; expires=` + new Date(2024, 0, 1, 12).toUTCString();
+
+console.log(document.cookie);

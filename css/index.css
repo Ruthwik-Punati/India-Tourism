@@ -14,7 +14,6 @@
 
 .theme-links-container,
 .features-container,
-.family-time-card-container-container,
 .gallery {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
@@ -129,7 +128,7 @@
 
 .main-header {
   width: 100%;
-  height: 72rem;
+  height: 100vh;
   background-image: linear-gradient(
       to right,
       rgba(0, 0, 0, 0.7) 60%,
