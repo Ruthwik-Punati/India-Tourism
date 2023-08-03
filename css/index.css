@@ -214,13 +214,11 @@ button {
 .theme-links-container {
   width: 100%;
   margin: 2.4rem 0;
-
   margin-bottom: 2.4rem !important;
 }
 
 .theme-links {
   min-width: 60rem;
-
   display: flex;
   list-style-type: none;
   justify-content: space-around;
